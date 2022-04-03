@@ -1,0 +1,10 @@
+@AbapCatalog.sqlViewName: 'ZVIEWPROBLEMS'
+@AbapCatalog.compiler.compareFilter: true
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'View with Problems'
+define view Z_ViewWithProblems
+   as select from Z_ViewWithProblemsBase
+{
+   key MyKey,
+       MyField
+}

@@ -1,0 +1,11 @@
+@AbapCatalog.sqlViewName: 'ZVIEWPROBLEMSBS'
+@AbapCatalog.compiler.compareFilter: true
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'View with Problems Base'
+define view Z_ViewWithProblemsBase
+   as select distinct from t000
+{
+   key 'A' as MyKey,
+//   @AnalyticsDetails.query.hidden: true
+       'B' as MyField
+}

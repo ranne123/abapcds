@@ -1,0 +1,22 @@
+// Add a standard field via an extension association
+@AbapCatalog.sqlViewAppendName: 'ZXISOICPRIO'
+
+extend view I_SalesOrderItemCube 
+  with ZX_I_SalesOrderItemCube_Prio
+  association [0..1] to Z_Priority as _ZZPriority 
+    on $projection.zzpriority = _ZZPriority.ZZPriority
+  
+  association [0..1] to I_Customer as _ZZSoldToParty 
+    on $projection.soldtoparty = _ZZSoldToParty.Customer
+  association [0..1] to I_Country  as _ZZSoldToPartyCountry
+    on $projection.ZZSoldToPartyCountry = 
+                           _ZZSoldToPartyCountry.Country
+{ 
+  @ObjectModel.foreignKey.association: '_ZZPriority'
+  _Extension.ZZPriority,
+  _ZZPriority,
+  
+  @ObjectModel.foreignKey.association: '_ZZSoldToPartyCountry'
+  _ZZSoldToParty.Country as ZZSoldToPartyCountry,
+  _ZZSoldToPartyCountry
+}
