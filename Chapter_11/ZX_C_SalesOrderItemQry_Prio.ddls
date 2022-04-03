@@ -1,8 +1,0 @@
-// Extend an analytic query view
-@AbapCatalog.sqlViewAppendName: 'ZXCSOIQPRIO'
-extend view C_SalesOrderItemQry with ZX_C_SalesOrderItemQry_Prio
-
-{
-  @AnalyticsDetails.query.display: #KEY_TEXT
-  ZZPriority
-}
