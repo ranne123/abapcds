@@ -1,0 +1,21 @@
+@EndUserText.label : 'Sales Order'
+@AbapCatalog.enhancementCategory : #EXTENSIBLE_CHARACTER_NUMERIC
+@AbapCatalog.tableCategory : #TRANSPARENT
+@AbapCatalog.deliveryClass : #A
+@AbapCatalog.dataMaintenance : #ALLOWED
+define table zsalesorder {
+  key client           : abap.clnt not null;
+  key salesorder       : vbeln not null;
+  salesordertype       : auart;
+  soldtoparty          : kunag;
+  salesorganization    : vkorg;
+  distributionchannel  : vtweg;
+  organizationdivision : spart;
+  deliverystatus       : lfstk;
+  deletionindicator    : loekz;
+  createdbyuser        : ernam;
+  creationdatetime     : creation_date_time;
+  lastchangedbyuser    : aename;
+  lastchangedatetime   : last_changed_date_time;
+
+}
